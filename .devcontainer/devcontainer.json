@@ -7,6 +7,8 @@
       "version": "latest"
     }
   },
+  "onCreateCommand": "sudo mkdir -p /workspaces/.persist/project /workspaces/.persist/vscode-user && sudo chown -R camper:camper /workspaces/.persist && rmdir /workspace/project 2>/dev/null; sudo ln -sfn /workspaces/.persist/project /workspace/project; mkdir -p ~/.vscode-remote/data && ln -sfn /workspaces/.persist/vscode-user ~/.vscode-remote/data/User",
+  "postStartCommand": "sudo ln -sfn /workspaces/.persist/project /workspace/project; mkdir -p ~/.vscode-remote/data && ln -sfn /workspaces/.persist/vscode-user ~/.vscode-remote/data/User",
   "customizations": {
     "vscode": {
       "extensions": [
